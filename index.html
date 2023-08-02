@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <h1>Заполните форму для регистрации</h1>
+            <form novalidate name="registrationForm" class="form__registration">
+                <div class="form__unit">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" name="name" class="form__input" placeholder="Введите имя" minlength="2"
+                        maxlength="20" required />
+                    <p class="error-message" id="nameError"></p>
+                </div>
+                <div class="form__unit">
+                    <label for="surname">Фамилия</label>
+                    <input type="text" id="surname" name="surname" class="form__input" placeholder="Введите имя"
+                        minlength="2" maxlength="20" required />
+                    <p class="error-message" id="surnameError"></p>
+                </div>
+                <div class="form__unit">
+                    <label for="email">Адрес электронной почты</label>
+                    <input type="email" id="email" name="email" class="form__input" placeholder="Введите почту"
+                        required />
+                    <p class="error-message" id="emailError"></p>
+                </div>
+                <div class="form__unit">
+                    <label for="age">Возраст</label>
+                    <input type="number" id="age" name="age" class="form__input" placeholder="Введите ваш возраст"
+                        required autocomplete="off" />
+                    <p class="error-message" id="ageError"></p>
+                </div>
+
+                <div class="form__unit form__unit-gender">
+                    <div>
+                        <label for="gender">Пол</label>
+                    </div>
+                    <div class="genders">
+                        <input type="radio" name="gender" id="genderM" value="мужчина">
+                        <label for="genderM">Я мужчина</label>
+                        <input type="radio" name="gender" id="genderF" value="женщина">
+                        <label for="genderF">Я женщина</label>
+                    </div>
+
+                    <p class="error-message" id="genderError"></p>
+                </div>
+                <div class="form__unit">
+                    <label for="profession">Профессия</label>
+                    <select class="form__unit-profession" name="profession" id="profession" required>
+                        <option value="" disabled selected hidden>Выберите профессию</option>
+                        <option value="Врач">Врач</option>
+                        <option value="Программист">Программист</option>
+                        <option value="Учитель">Учитель</option>
+                        <option value="Дизайнер">Дизайнер</option>
+                        <option value="Инженер">Инженер</option>
+                        <option value="Продавец">Продавец</option>
+                        <option value="Другое">Другое</option>
+                    </select>
+                    <p class="error-message" id="professionError"></p>
+                </div>
+                <div class="form__unit">
+                    <label for="phone-input">Номер телефона</label>
+                    <input type="text" id="phone-input" name="phone" placeholder="+7 999 999-99-99" min="10"
+                        class="form__input" required />
+                    <p class="error-message" id="phoneError"></p>
+                </div>
+                <div class="form__unit">
+                    <label for="password">Придумайте пароль</label>
+                    <input type="password" name="password" id="password" minlength="8" pattern="[A-Za-z0-9]+" required
+                        class="form__input" />
+                    <p class="error-message" id="passwordError"></p>
+                    <label for="passwordRepeat">Повторите пароль</label>
+                    <input type="password" name="passwordRepeat" id="passwordRepeat" minlength="8"
+                        pattern="[A-Za-z0-9]+" required class="form__input" />
+                    <p class="error-message" id="passwordRepeatError"></p>
+                </div>
+                <div class="form__unit">
+                    <label for="iAgree">
+                        <input type="checkbox" id="iAgree" name="iAgree" required>
+                        <span>
+                            Я соглашаюсь с условиями обработки данных
+                        </span>
+                        <p class="error-message" id="agreeError"></p>
+                    </label>
+                </div>
+                <div class="form__unit form__unit-button">
+                    <button type="submit" class="button__registration">Зарегистрироваться</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
